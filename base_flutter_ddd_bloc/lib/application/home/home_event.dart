@@ -5,8 +5,6 @@ part 'home_event.freezed.dart';
 
 @freezed
 class HomeEvent with _$HomeEvent {
-  const factory HomeEvent.getUnread() = HomeEventGetUnread;
-
   const factory HomeEvent.getDataForApp() = HomeEventGetDataForApp;
 
   const factory HomeEvent.update(bool all, bool notification, bool promotion) =

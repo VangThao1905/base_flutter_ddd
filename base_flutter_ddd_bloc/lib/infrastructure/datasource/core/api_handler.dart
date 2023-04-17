@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
 import 'package:injectable/injectable.dart';
 
@@ -44,11 +43,10 @@ class APIHandler {
     // header[HttpHeaders.authorizationHeader] = appData.accessToken;
     header[HttpHeaders.authorizationHeader] = token;
     header[Constant.platform] = Platform.isIOS ? 'ios' : 'android';
-    header[Constant.app] = appData.app;
 
     try {
       Uri uri = Uri.parse(
-        (appData.env == Env.dev ? APIPath.hostDEV : APIPath.hostProd) + url,
+        (appData.env == Env.dev ? APIPath.devBaseUrl : APIPath.prodBaseUrl) + url,
       );
 
       log('CALL ${method.toString()}: $uri');

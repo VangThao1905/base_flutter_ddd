@@ -12,16 +12,11 @@ class InitData with _$InitData {
 
   const factory InitData({
     @Default('') String accessToken,
-    @Default('') String screen,
-    @Default('') String app,
     @Default(Env.dev) String env,
-    @Default(0) int initInboxId,
   }) = _InitData;
 
 
 
   factory InitData.fromJson(Map<String, dynamic> json) =>
       _$InitDataFromJson(json);
-
-  bool get hasInitInbox => initInboxId != 0;
 }

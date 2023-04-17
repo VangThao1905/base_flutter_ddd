@@ -21,10 +21,7 @@ InitData _$InitDataFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$InitData {
   String get accessToken => throw _privateConstructorUsedError;
-  String get screen => throw _privateConstructorUsedError;
-  String get app => throw _privateConstructorUsedError;
   String get env => throw _privateConstructorUsedError;
-  int get initInboxId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,12 +33,7 @@ mixin _$InitData {
 abstract class $InitDataCopyWith<$Res> {
   factory $InitDataCopyWith(InitData value, $Res Function(InitData) then) =
       _$InitDataCopyWithImpl<$Res>;
-  $Res call(
-      {String accessToken,
-      String screen,
-      String app,
-      String env,
-      int initInboxId});
+  $Res call({String accessToken, String env});
 }
 
 /// @nodoc
@@ -55,32 +47,17 @@ class _$InitDataCopyWithImpl<$Res> implements $InitDataCopyWith<$Res> {
   @override
   $Res call({
     Object? accessToken = freezed,
-    Object? screen = freezed,
-    Object? app = freezed,
     Object? env = freezed,
-    Object? initInboxId = freezed,
   }) {
     return _then(_value.copyWith(
       accessToken: accessToken == freezed
           ? _value.accessToken
           : accessToken // ignore: cast_nullable_to_non_nullable
               as String,
-      screen: screen == freezed
-          ? _value.screen
-          : screen // ignore: cast_nullable_to_non_nullable
-              as String,
-      app: app == freezed
-          ? _value.app
-          : app // ignore: cast_nullable_to_non_nullable
-              as String,
       env: env == freezed
           ? _value.env
           : env // ignore: cast_nullable_to_non_nullable
               as String,
-      initInboxId: initInboxId == freezed
-          ? _value.initInboxId
-          : initInboxId // ignore: cast_nullable_to_non_nullable
-              as int,
     ));
   }
 }
@@ -91,12 +68,7 @@ abstract class _$$_InitDataCopyWith<$Res> implements $InitDataCopyWith<$Res> {
           _$_InitData value, $Res Function(_$_InitData) then) =
       __$$_InitDataCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String accessToken,
-      String screen,
-      String app,
-      String env,
-      int initInboxId});
+  $Res call({String accessToken, String env});
 }
 
 /// @nodoc
@@ -112,32 +84,17 @@ class __$$_InitDataCopyWithImpl<$Res> extends _$InitDataCopyWithImpl<$Res>
   @override
   $Res call({
     Object? accessToken = freezed,
-    Object? screen = freezed,
-    Object? app = freezed,
     Object? env = freezed,
-    Object? initInboxId = freezed,
   }) {
     return _then(_$_InitData(
       accessToken: accessToken == freezed
           ? _value.accessToken
           : accessToken // ignore: cast_nullable_to_non_nullable
               as String,
-      screen: screen == freezed
-          ? _value.screen
-          : screen // ignore: cast_nullable_to_non_nullable
-              as String,
-      app: app == freezed
-          ? _value.app
-          : app // ignore: cast_nullable_to_non_nullable
-              as String,
       env: env == freezed
           ? _value.env
           : env // ignore: cast_nullable_to_non_nullable
               as String,
-      initInboxId: initInboxId == freezed
-          ? _value.initInboxId
-          : initInboxId // ignore: cast_nullable_to_non_nullable
-              as int,
     ));
   }
 }
@@ -145,13 +102,7 @@ class __$$_InitDataCopyWithImpl<$Res> extends _$InitDataCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_InitData extends _InitData with DiagnosticableTreeMixin {
-  const _$_InitData(
-      {this.accessToken = '',
-      this.screen = '',
-      this.app = '',
-      this.env = Env.dev,
-      this.initInboxId = 0})
-      : super._();
+  const _$_InitData({this.accessToken = '', this.env = Env.dev}) : super._();
 
   factory _$_InitData.fromJson(Map<String, dynamic> json) =>
       _$$_InitDataFromJson(json);
@@ -161,20 +112,11 @@ class _$_InitData extends _InitData with DiagnosticableTreeMixin {
   final String accessToken;
   @override
   @JsonKey()
-  final String screen;
-  @override
-  @JsonKey()
-  final String app;
-  @override
-  @JsonKey()
   final String env;
-  @override
-  @JsonKey()
-  final int initInboxId;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'InitData(accessToken: $accessToken, screen: $screen, app: $app, env: $env, initInboxId: $initInboxId)';
+    return 'InitData(accessToken: $accessToken, env: $env)';
   }
 
   @override
@@ -183,10 +125,7 @@ class _$_InitData extends _InitData with DiagnosticableTreeMixin {
     properties
       ..add(DiagnosticsProperty('type', 'InitData'))
       ..add(DiagnosticsProperty('accessToken', accessToken))
-      ..add(DiagnosticsProperty('screen', screen))
-      ..add(DiagnosticsProperty('app', app))
-      ..add(DiagnosticsProperty('env', env))
-      ..add(DiagnosticsProperty('initInboxId', initInboxId));
+      ..add(DiagnosticsProperty('env', env));
   }
 
   @override
@@ -196,11 +135,7 @@ class _$_InitData extends _InitData with DiagnosticableTreeMixin {
             other is _$_InitData &&
             const DeepCollectionEquality()
                 .equals(other.accessToken, accessToken) &&
-            const DeepCollectionEquality().equals(other.screen, screen) &&
-            const DeepCollectionEquality().equals(other.app, app) &&
-            const DeepCollectionEquality().equals(other.env, env) &&
-            const DeepCollectionEquality()
-                .equals(other.initInboxId, initInboxId));
+            const DeepCollectionEquality().equals(other.env, env));
   }
 
   @JsonKey(ignore: true)
@@ -208,10 +143,7 @@ class _$_InitData extends _InitData with DiagnosticableTreeMixin {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(accessToken),
-      const DeepCollectionEquality().hash(screen),
-      const DeepCollectionEquality().hash(app),
-      const DeepCollectionEquality().hash(env),
-      const DeepCollectionEquality().hash(initInboxId));
+      const DeepCollectionEquality().hash(env));
 
   @JsonKey(ignore: true)
   @override
@@ -225,12 +157,8 @@ class _$_InitData extends _InitData with DiagnosticableTreeMixin {
 }
 
 abstract class _InitData extends InitData {
-  const factory _InitData(
-      {final String accessToken,
-      final String screen,
-      final String app,
-      final String env,
-      final int initInboxId}) = _$_InitData;
+  const factory _InitData({final String accessToken, final String env}) =
+      _$_InitData;
   const _InitData._() : super._();
 
   factory _InitData.fromJson(Map<String, dynamic> json) = _$_InitData.fromJson;
@@ -238,13 +166,7 @@ abstract class _InitData extends InitData {
   @override
   String get accessToken;
   @override
-  String get screen;
-  @override
-  String get app;
-  @override
   String get env;
-  @override
-  int get initInboxId;
   @override
   @JsonKey(ignore: true)
   _$$_InitDataCopyWith<_$_InitData> get copyWith =>

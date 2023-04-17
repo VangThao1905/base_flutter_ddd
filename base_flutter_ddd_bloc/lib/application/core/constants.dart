@@ -1,5 +1,7 @@
 class Constant {
   static const String type = 'type';
+  static const String name = 'name';
+  static const String description = 'description';
   static const String unsubscribe = 'unsubscribe';
   static const String categoryIdSnake = 'category_id';
   static const String campaignTypeSnake = 'campaign_type';
@@ -19,9 +21,7 @@ class Constant {
   static const String app = 'app';
   static const String screen = 'screen';
   static const String accessToken = 'accessToken';
-  static const String inboxAll = 'inboxAll';
-  static const String inboxNotification = 'inboxNotification';
-  static const String inboxPromotion = 'inboxPromotion';
+  static const String studentAll = 'studentAll';
   static const String inboxId = 'inboxId';
   static const String message = 'message';
   static const String errorCode = 'error_code';

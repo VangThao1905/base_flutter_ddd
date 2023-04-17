@@ -65,7 +65,7 @@ class Palette {
   static const Color textNote = Color(0xff72727C);
   static const Color shadow = Color.fromARGB(16, 0, 0, 0);
   static const Color shadowAppBar = Color(0xffD3D3D3);
-  static const Color bgListInbox = Color(0xffEAEAEA);
+  static const Color bgListStudent = Color(0xffc3d9b3);
 }
 
 AppBarTheme appBarTheme = AppBarTheme(

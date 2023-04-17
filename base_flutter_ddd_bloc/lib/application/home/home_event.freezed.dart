@@ -18,7 +18,6 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$HomeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getUnread,
     required TResult Function() getDataForApp,
     required TResult Function(bool all, bool notification, bool promotion)
         update,
@@ -26,14 +25,12 @@ mixin _$HomeEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? getUnread,
     TResult Function()? getDataForApp,
     TResult Function(bool all, bool notification, bool promotion)? update,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getUnread,
     TResult Function()? getDataForApp,
     TResult Function(bool all, bool notification, bool promotion)? update,
     required TResult orElse(),
@@ -41,21 +38,18 @@ mixin _$HomeEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(HomeEventGetUnread value) getUnread,
     required TResult Function(HomeEventGetDataForApp value) getDataForApp,
     required TResult Function(HomeEventUpdate value) update,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(HomeEventGetUnread value)? getUnread,
     TResult Function(HomeEventGetDataForApp value)? getDataForApp,
     TResult Function(HomeEventUpdate value)? update,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(HomeEventGetUnread value)? getUnread,
     TResult Function(HomeEventGetDataForApp value)? getDataForApp,
     TResult Function(HomeEventUpdate value)? update,
     required TResult orElse(),
@@ -76,126 +70,6 @@ class _$HomeEventCopyWithImpl<$Res> implements $HomeEventCopyWith<$Res> {
   final HomeEvent _value;
   // ignore: unused_field
   final $Res Function(HomeEvent) _then;
-}
-
-/// @nodoc
-abstract class _$$HomeEventGetUnreadCopyWith<$Res> {
-  factory _$$HomeEventGetUnreadCopyWith(_$HomeEventGetUnread value,
-          $Res Function(_$HomeEventGetUnread) then) =
-      __$$HomeEventGetUnreadCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$HomeEventGetUnreadCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res>
-    implements _$$HomeEventGetUnreadCopyWith<$Res> {
-  __$$HomeEventGetUnreadCopyWithImpl(
-      _$HomeEventGetUnread _value, $Res Function(_$HomeEventGetUnread) _then)
-      : super(_value, (v) => _then(v as _$HomeEventGetUnread));
-
-  @override
-  _$HomeEventGetUnread get _value => super._value as _$HomeEventGetUnread;
-}
-
-/// @nodoc
-
-class _$HomeEventGetUnread
-    with DiagnosticableTreeMixin
-    implements HomeEventGetUnread {
-  const _$HomeEventGetUnread();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HomeEvent.getUnread()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'HomeEvent.getUnread'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$HomeEventGetUnread);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() getUnread,
-    required TResult Function() getDataForApp,
-    required TResult Function(bool all, bool notification, bool promotion)
-        update,
-  }) {
-    return getUnread();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? getUnread,
-    TResult Function()? getDataForApp,
-    TResult Function(bool all, bool notification, bool promotion)? update,
-  }) {
-    return getUnread?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getUnread,
-    TResult Function()? getDataForApp,
-    TResult Function(bool all, bool notification, bool promotion)? update,
-    required TResult orElse(),
-  }) {
-    if (getUnread != null) {
-      return getUnread();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(HomeEventGetUnread value) getUnread,
-    required TResult Function(HomeEventGetDataForApp value) getDataForApp,
-    required TResult Function(HomeEventUpdate value) update,
-  }) {
-    return getUnread(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(HomeEventGetUnread value)? getUnread,
-    TResult Function(HomeEventGetDataForApp value)? getDataForApp,
-    TResult Function(HomeEventUpdate value)? update,
-  }) {
-    return getUnread?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(HomeEventGetUnread value)? getUnread,
-    TResult Function(HomeEventGetDataForApp value)? getDataForApp,
-    TResult Function(HomeEventUpdate value)? update,
-    required TResult orElse(),
-  }) {
-    if (getUnread != null) {
-      return getUnread(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class HomeEventGetUnread implements HomeEvent {
-  const factory HomeEventGetUnread() = _$HomeEventGetUnread;
 }
 
 /// @nodoc
@@ -248,7 +122,6 @@ class _$HomeEventGetDataForApp
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getUnread,
     required TResult Function() getDataForApp,
     required TResult Function(bool all, bool notification, bool promotion)
         update,
@@ -259,7 +132,6 @@ class _$HomeEventGetDataForApp
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? getUnread,
     TResult Function()? getDataForApp,
     TResult Function(bool all, bool notification, bool promotion)? update,
   }) {
@@ -269,7 +141,6 @@ class _$HomeEventGetDataForApp
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getUnread,
     TResult Function()? getDataForApp,
     TResult Function(bool all, bool notification, bool promotion)? update,
     required TResult orElse(),
@@ -283,7 +154,6 @@ class _$HomeEventGetDataForApp
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(HomeEventGetUnread value) getUnread,
     required TResult Function(HomeEventGetDataForApp value) getDataForApp,
     required TResult Function(HomeEventUpdate value) update,
   }) {
@@ -293,7 +163,6 @@ class _$HomeEventGetDataForApp
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(HomeEventGetUnread value)? getUnread,
     TResult Function(HomeEventGetDataForApp value)? getDataForApp,
     TResult Function(HomeEventUpdate value)? update,
   }) {
@@ -303,7 +172,6 @@ class _$HomeEventGetDataForApp
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(HomeEventGetUnread value)? getUnread,
     TResult Function(HomeEventGetDataForApp value)? getDataForApp,
     TResult Function(HomeEventUpdate value)? update,
     required TResult orElse(),
@@ -416,7 +284,6 @@ class _$HomeEventUpdate
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() getUnread,
     required TResult Function() getDataForApp,
     required TResult Function(bool all, bool notification, bool promotion)
         update,
@@ -427,7 +294,6 @@ class _$HomeEventUpdate
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? getUnread,
     TResult Function()? getDataForApp,
     TResult Function(bool all, bool notification, bool promotion)? update,
   }) {
@@ -437,7 +303,6 @@ class _$HomeEventUpdate
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getUnread,
     TResult Function()? getDataForApp,
     TResult Function(bool all, bool notification, bool promotion)? update,
     required TResult orElse(),
@@ -451,7 +316,6 @@ class _$HomeEventUpdate
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(HomeEventGetUnread value) getUnread,
     required TResult Function(HomeEventGetDataForApp value) getDataForApp,
     required TResult Function(HomeEventUpdate value) update,
   }) {
@@ -461,7 +325,6 @@ class _$HomeEventUpdate
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(HomeEventGetUnread value)? getUnread,
     TResult Function(HomeEventGetDataForApp value)? getDataForApp,
     TResult Function(HomeEventUpdate value)? update,
   }) {
@@ -471,7 +334,6 @@ class _$HomeEventUpdate
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(HomeEventGetUnread value)? getUnread,
     TResult Function(HomeEventGetDataForApp value)? getDataForApp,
     TResult Function(HomeEventUpdate value)? update,
     required TResult orElse(),

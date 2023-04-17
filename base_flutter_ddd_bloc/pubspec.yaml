@@ -47,8 +47,6 @@ dependencies:
   infinite_scroll_pagination: "3.0.0"
   dartz: ^0.10.1
   flutter_bloc: ^8.1.2
-  flutter_html: ^3.0.0-alpha.5
-  badges: ^2.0.3
   http: ^0.13.5
 
 dev_dependencies:
