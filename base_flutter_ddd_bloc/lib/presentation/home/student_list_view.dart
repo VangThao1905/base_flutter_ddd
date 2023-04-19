@@ -64,10 +64,10 @@ class _StudentListViewState extends State<StudentListView> {
                   return const Divider(height: 1, thickness: 1);
                 },
                 builderDelegate: PagedChildBuilderDelegate<Student>(
-                  itemBuilder: (context, item, index) => ItemInboxView(
-                    item: item,
+                  itemBuilder: (context, item, index) => StudentItem(
+                    student: item,
                     onPressedItem: (Student item) {
-                      DetailPage.show(context, item.id);
+                      DetailPage.show(context, item);
                     },
                   ),
                   noItemsFoundIndicatorBuilder: (context) {

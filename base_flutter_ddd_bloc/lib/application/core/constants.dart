@@ -22,6 +22,7 @@ class Constant {
   static const String screen = 'screen';
   static const String accessToken = 'accessToken';
   static const String studentAll = 'studentAll';
+  static const String student = 'student';
   static const String inboxId = 'inboxId';
   static const String message = 'message';
   static const String errorCode = 'error_code';

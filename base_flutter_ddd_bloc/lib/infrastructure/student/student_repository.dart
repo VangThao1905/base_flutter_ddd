@@ -3,10 +3,14 @@ import 'package:base_flutter_ddd_bloc/domain/student/student.dart';
 import 'package:base_flutter_ddd_bloc/domain/student/student_failure.dart';
 import 'package:base_flutter_ddd_bloc/infrastructure/datasource/core/api_exception.dart';
 import 'package:dartz/dartz.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
 import '../datasource/remote/student_ds.dart';
 import 'student_mapper.dart';
+
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 @Injectable(as: IStudentRepository)
 class InboxRepository implements IStudentRepository {

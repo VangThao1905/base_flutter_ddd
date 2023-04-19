@@ -5,15 +5,15 @@ import 'package:flutter/material.dart';
 import '../core/style.dart';
 
 class DetailPage extends StatefulWidget {
-  const DetailPage({Key? key, required this.item}) : super(key: key);
+  const DetailPage({Key? key, required this.student}) : super(key: key);
 
-  final Student item;
+  final Student student;
 
-  static show(BuildContext context, int inboxId) {
+  static show(BuildContext context, Student student) {
     return Navigator.pushNamed(
       context,
       RouteName.detail,
-      arguments: <String, dynamic>{Constant.inboxId: inboxId},
+      arguments: <String, dynamic>{Constant.student: student},
     );
   }
 
@@ -28,6 +28,8 @@ class _DetailPageState extends State<DetailPage> {
   @override
   void initState() {
     // bloc.add(InboxDetailEvent.getDetail(widget.item.id));
+
+    print("init detail page");
 
     super.initState();
   }
@@ -44,9 +46,17 @@ class _DetailPageState extends State<DetailPage> {
       backgroundColor: Palette.background,
       appBar: AppBar(
         leading: const CloseButton(),
-        title: Text("abc"),
+        title: Text("Student detail"),
       ),
-      body: Text("detail"),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("Student id:${widget.student.id}"),
+          Text("Student name:${widget.student.name}"),
+          Text("Student description:${widget.student.description}")
+        ],
+      ),
       // body: BlocBuilder<InboxDetailBloc, InboxDetailState>(
       //   bloc: bloc,
       //   builder: (context, state) {

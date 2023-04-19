@@ -30,12 +30,10 @@ class _HomePageState extends State<HomePage>
         return Scaffold(
             backgroundColor: Palette.bgListStudent,
             appBar: AppBar(
-              leading: IconButton(
-                  icon: const Icon(Icons.arrow_back_ios_rounded),
-                  onPressed: () => print("Back click")),
               elevation: 1,
               shadowColor: Palette.shadowAppBar,
               title: Text("Student"),
+              centerTitle: true,
             ),
             body: state.hasToken ? const StudentListView() : const LoadingView()
             // body: Text("Abc"),

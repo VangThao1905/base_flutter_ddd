@@ -1,14 +1,15 @@
 import 'dart:developer';
 
-
 import 'package:base_flutter_ddd_bloc/application/core/constants.dart';
 import 'package:base_flutter_ddd_bloc/presentation/detail/detail_page.dart';
 import 'package:base_flutter_ddd_bloc/presentation/home/home_page.dart';
+import 'package:base_flutter_ddd_bloc/presentation/student_edit/student_edit_page.dart';
 import 'package:flutter/material.dart';
 
 class RouteName {
   static const String home = '/';
   static const String detail = '/detail';
+  static const String studentEdit = '/student_edit';
 }
 
 MaterialPageRoute onGenerateRoute(RouteSettings settings, String initName) {
@@ -28,7 +29,14 @@ MaterialPageRoute onGenerateRoute(RouteSettings settings, String initName) {
     case RouteName.detail:
       return MaterialPageRoute<dynamic>(
         builder: (BuildContext context) => DetailPage(
-          item: arg[Constant.inbox],
+          student: arg[Constant.student],
+        ),
+        settings: const RouteSettings(name: RouteName.detail),
+      );
+    case RouteName.studentEdit:
+      return MaterialPageRoute<dynamic>(
+        builder: (BuildContext context) => StudentEditPage(
+          student: arg[Constant.student],
         ),
         settings: const RouteSettings(name: RouteName.detail),
       );
