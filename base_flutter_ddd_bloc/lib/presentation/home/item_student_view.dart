@@ -1,7 +1,10 @@
+import 'package:base_flutter_ddd_bloc/application/student/student_cubit.dart';
 import 'package:base_flutter_ddd_bloc/domain/student/student.dart';
 import 'package:base_flutter_ddd_bloc/presentation/core/style.dart';
 import 'package:base_flutter_ddd_bloc/presentation/student_edit/student_edit_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 
 class StudentItem extends StatelessWidget {
   const StudentItem({
@@ -16,6 +19,7 @@ class StudentItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
+    final studentBloc = BlocProvider.of<StudentCubit>(context);
 
     return GestureDetector(
       onTap: () => onPressedItem(student),
@@ -57,8 +61,10 @@ class StudentItem extends StatelessWidget {
                         ),
                       ),
                       IconButton(
-                          onPressed: () {
-                            StudentEditPage.show(context, student);
+                          onPressed: () async {
+                            dynamic studentRes =  await StudentEditPage.show(context, student);
+                            if(studentRes != null){
+                            }
                           },
                           icon: const Icon(Icons.edit,color: Colors.grey,)),
                       IconButton(

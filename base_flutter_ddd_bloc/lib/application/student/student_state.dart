@@ -6,13 +6,9 @@ part 'student_state.freezed.dart';
 
 @freezed
 class StudentState with _$StudentState {
-  const factory StudentState(
-      {@Default([]) List<Student> listInbox,
-      @Default('') String errorMessage,
-      PagingController<int, Student>? pageController}) = _StudentState;
+  const factory StudentState.loading() = _StudentLoading;
 
-  factory StudentState.initial() => StudentState(
-        listInbox: [const Student()],
-        pageController: PagingController<int, Student>(firstPageKey: 1),
-      );
+  const factory StudentState.loaded(List<Student> items) = _StudentLoaded;
+
+  const factory StudentState.error(String message) = _StudentError;
 }

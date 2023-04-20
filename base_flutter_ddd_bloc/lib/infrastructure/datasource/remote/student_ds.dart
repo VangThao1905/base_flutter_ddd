@@ -6,6 +6,7 @@ class StudentDS {
     // String url = '';
     //
     // APIResponse apiResponse = await GetIt.I.get<APIHandler>().callGet(url);
+    print('get list student');
 
     List<dynamic> students = [
       {

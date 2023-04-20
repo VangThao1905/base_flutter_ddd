@@ -5,4 +5,5 @@ import 'student_failure.dart';
 
 abstract class IStudentRepository {
   Future<Either<StudentFailure, List<Student>>> getAll(int page);
+  Future<Either<bool, bool>> update(int studentId);
 }

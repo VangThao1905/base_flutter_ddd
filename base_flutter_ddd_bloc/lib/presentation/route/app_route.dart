@@ -4,12 +4,14 @@ import 'package:base_flutter_ddd_bloc/application/core/constants.dart';
 import 'package:base_flutter_ddd_bloc/presentation/detail/detail_page.dart';
 import 'package:base_flutter_ddd_bloc/presentation/home/home_page.dart';
 import 'package:base_flutter_ddd_bloc/presentation/student_edit/student_edit_page.dart';
+import 'package:base_flutter_ddd_bloc/presentation/widgets/failure_view.dart';
 import 'package:flutter/material.dart';
 
 class RouteName {
   static const String home = '/';
   static const String detail = '/detail';
   static const String studentEdit = '/student_edit';
+  static const String failureView = '/failure_view';
 }
 
 MaterialPageRoute onGenerateRoute(RouteSettings settings, String initName) {
@@ -40,6 +42,10 @@ MaterialPageRoute onGenerateRoute(RouteSettings settings, String initName) {
         ),
         settings: const RouteSettings(name: RouteName.detail),
       );
+
+    case RouteName.failureView:
+      return MaterialPageRoute<dynamic>(
+          builder: (BuildContext context) => const FailureView());
 
     default:
       return MaterialPageRoute<dynamic>(

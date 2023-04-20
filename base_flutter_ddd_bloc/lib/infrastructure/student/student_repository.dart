@@ -31,4 +31,13 @@ class InboxRepository implements IStudentRepository {
       return left(StudentFailure.serverError(e.message));
     }
   }
+
+  @override
+  Future<Either<bool, bool>> update(int studentId) async {
+    try {
+      return right(true);
+    } catch (e) {
+      return left(false);
+    }
+  }
 }

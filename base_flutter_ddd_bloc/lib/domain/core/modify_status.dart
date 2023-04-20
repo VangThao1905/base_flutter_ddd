@@ -1,0 +1,1 @@
+enum ModifyStatus{none, processing, done, error}
