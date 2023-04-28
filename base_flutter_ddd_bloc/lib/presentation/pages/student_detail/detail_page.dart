@@ -1,8 +1,8 @@
 import 'package:base_flutter_ddd_bloc/application/core/constants.dart';
 import 'package:base_flutter_ddd_bloc/domain/student/student.dart';
-import 'package:base_flutter_ddd_bloc/presentation/route/app_route.dart';
 import 'package:flutter/material.dart';
-import '../core/style.dart';
+import '../../core/style.dart';
+import '../../route/app_route.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({Key? key, required this.student}) : super(key: key);

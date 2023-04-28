@@ -4,16 +4,16 @@ import 'package:base_flutter_ddd_bloc/domain/student/student.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 
-part 'student_update_state.freezed.dart';
+part 'update_student_state.freezed.dart';
 
 
 @freezed
-class StudentUpdateState with _$StudentUpdateState {
-  const factory StudentUpdateState(
+class UpdateStudentState with _$UpdateStudentState {
+  const factory UpdateStudentState(
       {@Default(Student()) Student student,
       @Default(LoadDataStatus.loading) LoadDataStatus initStatus,
       @Default(ModifyStatus.none) ModifyStatus updateStatus,
       @Default(0) int id,
       @Default('') String name,
-      @Default('') String description}) = _StudentUpdateState;
+      @Default('') String description}) = _UpdateStudentState;
 }

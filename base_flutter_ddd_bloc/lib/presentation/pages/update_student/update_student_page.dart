@@ -1,10 +1,9 @@
 import 'package:base_flutter_ddd_bloc/application/core/constants.dart';
-import 'package:base_flutter_ddd_bloc/application/student_udpate/student_update_cubit.dart';
-import 'package:base_flutter_ddd_bloc/application/student_udpate/student_update_state.dart';
+import 'package:base_flutter_ddd_bloc/application/update_student/update_student_cubit.dart';
+import 'package:base_flutter_ddd_bloc/application/update_student/update_student_state.dart';
 import 'package:base_flutter_ddd_bloc/domain/core/load_data_status.dart';
 import 'package:base_flutter_ddd_bloc/domain/core/modify_status.dart';
 import 'package:base_flutter_ddd_bloc/domain/student/student.dart';
-import 'package:base_flutter_ddd_bloc/presentation/route/app_route.dart';
 import 'package:base_flutter_ddd_bloc/presentation/widgets/failure_view.dart';
 import 'package:base_flutter_ddd_bloc/presentation/widgets/loading_view.dart';
 import 'package:flutter/material.dart';
@@ -13,13 +12,15 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get_it/get_it.dart';
 
-class StudentEditPage extends StatefulWidget {
+import '../../route/app_route.dart';
+
+class UpdateStudentPage extends StatefulWidget {
   final Student student;
 
-  const StudentEditPage({Key? key, required this.student}) : super(key: key);
+  const UpdateStudentPage({Key? key, required this.student}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _StudentEditPage();
+  State<StatefulWidget> createState() => _AddStudentPage();
 
   static show(BuildContext context, Student student) {
     return Navigator.pushNamed(
@@ -30,9 +31,9 @@ class StudentEditPage extends StatefulWidget {
   }
 }
 
-class _StudentEditPage extends State<StudentEditPage> {
-  final StudentUpdateCubit _studentUpdateCubit =
-      GetIt.I.get<StudentUpdateCubit>();
+class _AddStudentPage extends State<UpdateStudentPage> {
+  final UpdateStudentCubit _studentUpdateCubit =
+      GetIt.I.get<UpdateStudentCubit>();
 
   final GlobalKey<FormState> _formKey = GlobalKey();
   List<String> _filedNames = [];
@@ -56,7 +57,7 @@ class _StudentEditPage extends State<StudentEditPage> {
   }
 
   void loadStudentData() {
-    final StudentUpdateState state = _studentUpdateCubit.getState();
+    final UpdateStudentState state = _studentUpdateCubit.getState();
     _controllers['id']?.text = state.id.toString();
     _controllers['name']?.text = state.name;
     _controllers['description']?.text = state.description;
@@ -71,7 +72,7 @@ class _StudentEditPage extends State<StudentEditPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: BlocConsumer<StudentUpdateCubit, StudentUpdateState>(
+        child: BlocConsumer<UpdateStudentCubit, UpdateStudentState>(
           builder: (context, state) {
             switch (state.initStatus) {
               case LoadDataStatus.loading:
@@ -108,21 +109,16 @@ class _StudentEditPage extends State<StudentEditPage> {
         children: [
           TextFormField(
             controller: _controllers['id'],
+            enabled: false,
           ),
           const SizedBox(
             height: 8,
           ),
-          TextFormField(
-            controller: _controllers['name'],
-            onSaved: (value) => _studentUpdateCubit.setName(value),
-          ),
+          TextFormField(controller: _controllers['name']),
           const SizedBox(
             height: 8,
           ),
-          TextFormField(
-            controller: _controllers['description'],
-            onSaved: (value) => _studentUpdateCubit.setDescription(value),
-          ),
+          TextFormField(controller: _controllers['description']),
           const SizedBox(
             height: 16,
           ),
@@ -132,8 +128,14 @@ class _StudentEditPage extends State<StudentEditPage> {
                 if (!_formKey.currentState!.validate()) {
                   return;
                 }
-                _formKey.currentState?.save();
-                _studentUpdateCubit.updateContact();
+
+                String name = _controllers['name']?.text.toString() ?? '';
+                String description =
+                    _controllers['description']?.text.toString() ?? '';
+                _studentUpdateCubit.updateContact(Student(
+                    id: widget.student.id,
+                    name: name,
+                    description: description));
               },
               child: const Text('Update'))
         ],
@@ -141,7 +143,7 @@ class _StudentEditPage extends State<StudentEditPage> {
     );
   }
 
-  void _listenUpdateStatus(StudentUpdateState state) {
+  void _listenUpdateStatus(UpdateStudentState state) {
     switch (state.updateStatus) {
       case ModifyStatus.processing:
         EasyLoading.show();

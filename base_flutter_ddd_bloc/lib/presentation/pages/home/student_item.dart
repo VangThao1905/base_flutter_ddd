@@ -1,10 +1,8 @@
-import 'package:base_flutter_ddd_bloc/application/student/student_cubit.dart';
 import 'package:base_flutter_ddd_bloc/domain/student/student.dart';
 import 'package:base_flutter_ddd_bloc/presentation/core/style.dart';
-import 'package:base_flutter_ddd_bloc/presentation/student_edit/student_edit_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_it/get_it.dart';
+
+import '../update_student/update_student_page.dart';
 
 class StudentItem extends StatelessWidget {
   const StudentItem({
@@ -19,7 +17,6 @@ class StudentItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
-    final studentBloc = BlocProvider.of<StudentCubit>(context);
 
     return GestureDetector(
       onTap: () => onPressedItem(student),
@@ -47,13 +44,17 @@ class StudentItem extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
+                              student.name,
+                              style: textTheme.titleLarge,
+                            ),
+                            Text(
                               student.description,
                               maxLines: 3,
                               overflow: TextOverflow.ellipsis,
-                              style: textTheme.subtitle1?.copyWith(
-                                height: 22 / 16,
+                              style: textTheme.titleMedium?.copyWith(
+                                height: 1.2,
                                 fontWeight: FontWeight.w400,
-                                color: Colors.black,
+                                color: Colors.grey,
                               ),
                             ),
                             const SizedBox(height: 2),
@@ -62,16 +63,26 @@ class StudentItem extends StatelessWidget {
                       ),
                       IconButton(
                           onPressed: () async {
-                            dynamic studentRes =  await StudentEditPage.show(context, student);
-                            if(studentRes != null){
-                            }
+                            await UpdateStudentPage.show(context, student);
                           },
-                          icon: const Icon(Icons.edit,color: Colors.grey,)),
+                          icon: const Icon(
+                            Icons.edit,
+                            color: Colors.grey,
+                          )),
                       IconButton(
                           onPressed: () {
                             print("click delete");
-                          }, icon: const Icon(Icons.delete,color: Colors.red,))
+                          },
+                          icon: const Icon(
+                            Icons.delete,
+                            color: Colors.red,
+                          ))
                     ],
+                  ),
+                  const Divider(
+                    height: 8,
+                    thickness: 1,
+                    color: Colors.grey,
                   ),
                 ],
               ),

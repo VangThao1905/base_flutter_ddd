@@ -6,9 +6,13 @@ part 'student_state.freezed.dart';
 
 @freezed
 class StudentState with _$StudentState {
-  const factory StudentState.loading() = _StudentLoading;
+  const factory StudentState.initial() = StudentInitial;
 
-  const factory StudentState.loaded(List<Student> items) = _StudentLoaded;
+  const factory StudentState.loading() = StudentLoading;
 
-  const factory StudentState.error(String message) = _StudentError;
+  const factory StudentState.loaded(List<Student> items) = StudentLoaded;
+
+  const factory StudentState.updated() = StudentUpdated;
+
+  const factory StudentState.error(String message) = StudentError;
 }

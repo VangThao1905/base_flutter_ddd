@@ -1,6 +1,7 @@
-import 'package:base_flutter_ddd_bloc/presentation/route/app_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../route/app_route.dart';
 
 class FailureView extends StatelessWidget {
   const FailureView({Key? key}) : super(key: key);

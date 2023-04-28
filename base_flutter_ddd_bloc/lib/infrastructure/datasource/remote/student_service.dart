@@ -1,8 +1,8 @@
 import 'package:injectable/injectable.dart';
 
 @singleton
-class StudentDS {
-  Future<List<dynamic>> getList(int page) async {
+class StudentService {
+  Future<List<dynamic>> getList() async {
     // String url = '';
     //
     // APIResponse apiResponse = await GetIt.I.get<APIHandler>().callGet(url);
@@ -23,6 +23,11 @@ class StudentDS {
         "id": 3,
         "name": "Student 3",
         "description": "This is description of student 3"
+      },
+      {
+        "id": 4,
+        "name": "Student 4",
+        "description": "This is description of student 4"
       }
     ];
 
