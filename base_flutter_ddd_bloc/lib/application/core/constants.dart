@@ -18,5 +18,6 @@ class Constant {
   static const String inboxId = 'inboxId';
   static const String message = 'message';
   static const String errorCode = 'error_code';
+  static const String addStudentCubit = 'add_student_cubit';
   static const String studentUpdateCubit = 'student_update_cubit';
 }

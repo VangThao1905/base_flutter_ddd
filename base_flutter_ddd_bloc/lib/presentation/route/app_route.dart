@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:base_flutter_ddd_bloc/application/core/constants.dart';
 import 'package:base_flutter_ddd_bloc/application/core/injection.dart';
 import 'package:base_flutter_ddd_bloc/application/student/student_cubit.dart';
+import 'package:base_flutter_ddd_bloc/presentation/pages/add_student/add_student_page.dart';
 import 'package:base_flutter_ddd_bloc/presentation/widgets/failure_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,6 +15,7 @@ import '../pages/update_student/update_student_page.dart';
 class RouteName {
   static const String home = '/';
   static const String detail = '/detail';
+  static const String addStudent = '/add_student';
   static const String studentEdit = '/student_edit';
   static const String failureView = '/failure_view';
 }
@@ -42,12 +44,17 @@ MaterialPageRoute onGenerateRoute(RouteSettings settings, String initName) {
         ),
         settings: const RouteSettings(name: RouteName.detail),
       );
+    case RouteName.addStudent:
+      return MaterialPageRoute<dynamic>(
+        builder: (BuildContext context) => const AddStudentPage(),
+        settings: const RouteSettings(name: RouteName.addStudent),
+      );
     case RouteName.studentEdit:
       return MaterialPageRoute<dynamic>(
         builder: (BuildContext context) => UpdateStudentPage(
           student: arg[Constant.student],
         ),
-        settings: const RouteSettings(name: RouteName.detail),
+        settings: const RouteSettings(name: RouteName.studentEdit),
       );
 
     case RouteName.failureView:

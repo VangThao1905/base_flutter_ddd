@@ -8,8 +8,7 @@ part 'add_student_state.freezed.dart';
 
 @freezed
 class AddStudentState with _$AddStudentState {
-  const factory AddStudentState(
-      {@Default(LoadDataStatus.loading) LoadDataStatus initStatus,
+  const factory AddStudentState({
       @Default(ModifyStatus.none) ModifyStatus addStatus,
       @Default(0) int id,
       @Default('') String name,

@@ -1,6 +1,7 @@
 import 'package:base_flutter_ddd_bloc/application/student/student_cubit.dart';
 import 'package:base_flutter_ddd_bloc/application/student/student_state.dart';
 import 'package:base_flutter_ddd_bloc/presentation/core/style.dart';
+import 'package:base_flutter_ddd_bloc/presentation/pages/add_student/add_student_page.dart';
 import 'package:base_flutter_ddd_bloc/presentation/pages/home/student_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -50,6 +51,7 @@ class _HomePageState extends State<HomePage>
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           print("addd");
+          AddStudentPage.show(context);
         },
         child: const Icon(
           Icons.add,
