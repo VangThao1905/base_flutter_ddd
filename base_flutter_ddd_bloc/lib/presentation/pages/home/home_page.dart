@@ -6,7 +6,7 @@ import 'package:base_flutter_ddd_bloc/presentation/pages/home/student_list_view.
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-
+import 'package:get_it/get_it.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,6 +17,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
+  final StudentCubit _studentCubit = GetIt.I.get<StudentCubit>();
+
   @override
   void initState() {
     super.initState();
@@ -24,7 +26,7 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) {
-    BlocProvider.of<StudentCubit>(context).getStudents();
+    _studentCubit.getStudents();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -37,10 +39,10 @@ class _HomePageState extends State<HomePage>
         builder: (context, state) {
           if (state is StudentLoading) {
             EasyLoading.show();
-          } else if(state is StudentUpdated){
-            BlocProvider.of<StudentCubit>(context).getStudents();
+          } else if (state is StudentUpdated) {
+            _studentCubit.refresh();
             EasyLoading.dismiss();
-          }else{
+          } else {
             EasyLoading.dismiss();
           }
           return state is! StudentLoaded

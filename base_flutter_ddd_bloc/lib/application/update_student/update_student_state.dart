@@ -13,7 +13,7 @@ class UpdateStudentState with _$UpdateStudentState {
       {@Default(Student()) Student student,
       @Default(LoadDataStatus.loading) LoadDataStatus initStatus,
       @Default(ModifyStatus.none) ModifyStatus updateStatus,
-      @Default(0) int id,
+      @Default('') String id,
       @Default('') String name,
       @Default('') String description}) = _UpdateStudentState;
 }

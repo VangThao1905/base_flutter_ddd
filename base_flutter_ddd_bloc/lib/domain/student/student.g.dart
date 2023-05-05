@@ -7,7 +7,7 @@ part of 'student.dart';
 // **************************************************************************
 
 _$_Student _$$_StudentFromJson(Map<String, dynamic> json) => _$_Student(
-      id: json['id'] as int? ?? 0,
+      id: json['id'] as String? ?? '',
       name: json['name'] as String? ?? '',
       description: json['description'] as String? ?? '',
     );

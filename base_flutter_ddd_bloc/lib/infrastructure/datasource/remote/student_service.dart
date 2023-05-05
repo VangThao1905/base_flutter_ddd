@@ -10,22 +10,22 @@ class StudentService {
 
     List<dynamic> students = [
       {
-        "id": 1,
+        "id": "1",
         "name": "Student 1",
         "description": "This is description of student 1"
       },
       {
-        "id": 2,
+        "id": "2",
         "name": "Student 2",
         "description": "This is description of student 2"
       },
       {
-        "id": 3,
+        "id": "3",
         "name": "Student 3",
         "description": "This is description of student 3"
       },
       {
-        "id": 4,
+        "id": "4",
         "name": "Student 4",
         "description": "This is description of student 4"
       }

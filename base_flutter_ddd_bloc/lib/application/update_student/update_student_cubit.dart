@@ -21,11 +21,11 @@ class UpdateStudentCubit extends Cubit<UpdateStudentState> {
     emit(state.copyWith(initStatus: LoadDataStatus.success));
   }
 
-  Future<void> updateContact(Student newStudent) async {
+  Future<void> updateStudent(Student newStudent) async {
     emit(state.copyWith(updateStatus: ModifyStatus.processing));
 
-    Future.delayed(const Duration(seconds: 1), () {
-      GetIt.I.get<StudentCubit>().updateStudent(newStudent);
+    Future.delayed(const Duration(milliseconds: 500), () {
+      GetIt.I.get<StudentCubit>().updateStudentList(newStudent);
       emit(state.copyWith(
           updateStatus: ModifyStatus.done,
           id: state.id,

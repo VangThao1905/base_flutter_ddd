@@ -20,7 +20,7 @@ Student _$StudentFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Student {
-  int get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
 
@@ -33,7 +33,7 @@ mixin _$Student {
 abstract class $StudentCopyWith<$Res> {
   factory $StudentCopyWith(Student value, $Res Function(Student) then) =
       _$StudentCopyWithImpl<$Res>;
-  $Res call({int id, String name, String description});
+  $Res call({String id, String name, String description});
 }
 
 /// @nodoc
@@ -54,7 +54,7 @@ class _$StudentCopyWithImpl<$Res> implements $StudentCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -73,7 +73,7 @@ abstract class _$$_StudentCopyWith<$Res> implements $StudentCopyWith<$Res> {
           _$_Student value, $Res Function(_$_Student) then) =
       __$$_StudentCopyWithImpl<$Res>;
   @override
-  $Res call({int id, String name, String description});
+  $Res call({String id, String name, String description});
 }
 
 /// @nodoc
@@ -95,7 +95,7 @@ class __$$_StudentCopyWithImpl<$Res> extends _$StudentCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -111,7 +111,7 @@ class __$$_StudentCopyWithImpl<$Res> extends _$StudentCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Student extends _Student {
-  const _$_Student({this.id = 0, this.name = '', this.description = ''})
+  const _$_Student({this.id = '', this.name = '', this.description = ''})
       : super._();
 
   factory _$_Student.fromJson(Map<String, dynamic> json) =>
@@ -119,7 +119,7 @@ class _$_Student extends _Student {
 
   @override
   @JsonKey()
-  final int id;
+  final String id;
   @override
   @JsonKey()
   final String name;
@@ -164,13 +164,15 @@ class _$_Student extends _Student {
 
 abstract class _Student extends Student {
   const factory _Student(
-      {final int id, final String name, final String description}) = _$_Student;
+      {final String id,
+      final String name,
+      final String description}) = _$_Student;
   const _Student._() : super._();
 
   factory _Student.fromJson(Map<String, dynamic> json) = _$_Student.fromJson;
 
   @override
-  int get id;
+  String get id;
   @override
   String get name;
   @override

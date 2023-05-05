@@ -8,6 +8,8 @@ import 'core/style.dart';
 
 InitData appData = const InitData();
 
+GlobalKey<NavigatorState> navigationKey = GlobalKey();
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key, required this.initRoute}) : super(key: key);
 
@@ -16,6 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: navigationKey,
       debugShowCheckedModeBanner: false,
       onGenerateRoute: (setting) => onGenerateRoute(setting, initRoute),
       theme: appTheme,

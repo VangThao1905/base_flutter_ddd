@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$AddStudentState {
   ModifyStatus get addStatus => throw _privateConstructorUsedError;
-  int get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
 
@@ -31,7 +31,8 @@ abstract class $AddStudentStateCopyWith<$Res> {
   factory $AddStudentStateCopyWith(
           AddStudentState value, $Res Function(AddStudentState) then) =
       _$AddStudentStateCopyWithImpl<$Res>;
-  $Res call({ModifyStatus addStatus, int id, String name, String description});
+  $Res call(
+      {ModifyStatus addStatus, String id, String name, String description});
 }
 
 /// @nodoc
@@ -58,7 +59,7 @@ class _$AddStudentStateCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -78,7 +79,8 @@ abstract class _$$_AddStudentStateCopyWith<$Res>
           _$_AddStudentState value, $Res Function(_$_AddStudentState) then) =
       __$$_AddStudentStateCopyWithImpl<$Res>;
   @override
-  $Res call({ModifyStatus addStatus, int id, String name, String description});
+  $Res call(
+      {ModifyStatus addStatus, String id, String name, String description});
 }
 
 /// @nodoc
@@ -107,7 +109,7 @@ class __$$_AddStudentStateCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -127,7 +129,7 @@ class _$_AddStudentState
     implements _AddStudentState {
   const _$_AddStudentState(
       {this.addStatus = ModifyStatus.none,
-      this.id = 0,
+      this.id = '',
       this.name = '',
       this.description = ''});
 
@@ -136,7 +138,7 @@ class _$_AddStudentState
   final ModifyStatus addStatus;
   @override
   @JsonKey()
-  final int id;
+  final String id;
   @override
   @JsonKey()
   final String name;
@@ -189,14 +191,14 @@ class _$_AddStudentState
 abstract class _AddStudentState implements AddStudentState {
   const factory _AddStudentState(
       {final ModifyStatus addStatus,
-      final int id,
+      final String id,
       final String name,
       final String description}) = _$_AddStudentState;
 
   @override
   ModifyStatus get addStatus;
   @override
-  int get id;
+  String get id;
   @override
   String get name;
   @override

@@ -19,7 +19,7 @@ mixin _$UpdateStudentState {
   Student get student => throw _privateConstructorUsedError;
   LoadDataStatus get initStatus => throw _privateConstructorUsedError;
   ModifyStatus get updateStatus => throw _privateConstructorUsedError;
-  int get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
 
@@ -37,7 +37,7 @@ abstract class $UpdateStudentStateCopyWith<$Res> {
       {Student student,
       LoadDataStatus initStatus,
       ModifyStatus updateStatus,
-      int id,
+      String id,
       String name,
       String description});
 
@@ -78,7 +78,7 @@ class _$UpdateStudentStateCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -109,7 +109,7 @@ abstract class _$$_UpdateStudentStateCopyWith<$Res>
       {Student student,
       LoadDataStatus initStatus,
       ModifyStatus updateStatus,
-      int id,
+      String id,
       String name,
       String description});
 
@@ -153,7 +153,7 @@ class __$$_UpdateStudentStateCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -175,7 +175,7 @@ class _$_UpdateStudentState
       {this.student = const Student(),
       this.initStatus = LoadDataStatus.loading,
       this.updateStatus = ModifyStatus.none,
-      this.id = 0,
+      this.id = '',
       this.name = '',
       this.description = ''});
 
@@ -190,7 +190,7 @@ class _$_UpdateStudentState
   final ModifyStatus updateStatus;
   @override
   @JsonKey()
-  final int id;
+  final String id;
   @override
   @JsonKey()
   final String name;
@@ -254,7 +254,7 @@ abstract class _UpdateStudentState implements UpdateStudentState {
       {final Student student,
       final LoadDataStatus initStatus,
       final ModifyStatus updateStatus,
-      final int id,
+      final String id,
       final String name,
       final String description}) = _$_UpdateStudentState;
 
@@ -265,7 +265,7 @@ abstract class _UpdateStudentState implements UpdateStudentState {
   @override
   ModifyStatus get updateStatus;
   @override
-  int get id;
+  String get id;
   @override
   String get name;
   @override

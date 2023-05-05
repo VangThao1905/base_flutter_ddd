@@ -99,7 +99,7 @@ class _AddStudentPage extends State<AddStudentPage> {
           ),
           ElevatedButton(
               onPressed: () {
-                // Navigator.pop(context);
+                Navigator.pop(context);
                 if (!_formKey.currentState!.validate()) {
                   return;
                 }
@@ -107,10 +107,11 @@ class _AddStudentPage extends State<AddStudentPage> {
                 String name = _controllers['name']?.text.toString() ?? '';
                 String description =
                     _controllers['description']?.text.toString() ?? '';
-                // _addStudentCubit.updateContact(Student(
-                //     id: widget.student.id,
-                //     name: name,
-                //     description: description));
+                Student student = Student(
+                    id: UniqueKey().toString(),
+                    name: name,
+                    description: description);
+                _addStudentCubit.addStudent(student);
               },
               child: const Text('Add'))
         ],

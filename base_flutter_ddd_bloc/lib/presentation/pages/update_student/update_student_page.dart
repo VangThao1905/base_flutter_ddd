@@ -124,7 +124,7 @@ class _AddStudentPage extends State<UpdateStudentPage> {
           ),
           ElevatedButton(
               onPressed: () {
-                // Navigator.pop(context);
+                Navigator.pop(context);
                 if (!_formKey.currentState!.validate()) {
                   return;
                 }
@@ -132,7 +132,7 @@ class _AddStudentPage extends State<UpdateStudentPage> {
                 String name = _controllers['name']?.text.toString() ?? '';
                 String description =
                     _controllers['description']?.text.toString() ?? '';
-                _studentUpdateCubit.updateContact(Student(
+                _studentUpdateCubit.updateStudent(Student(
                     id: widget.student.id,
                     name: name,
                     description: description));
